@@ -11,8 +11,8 @@
 
 
 
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="/bootstrap-5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -202,6 +202,11 @@
         </ul>
       </div>
     </div>
+    
+    <div class="container">
+      <canvas id="myChart"></canvas>
+    </div>
+
   </main>
 
 
@@ -210,4 +215,28 @@
   <script src="sidebars.js"></script>
 </body>
 
+<script>
+
+
+  let myChart = document.getElementById('myChart').getContext('2d');
+  
+  let barChart = new Chart(myChart, {
+      type: 'line',
+      data: {
+          labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+          datasets: [{
+              label: 'Population',
+              data: [
+                        120,
+                        134,
+                        800,
+                        700,
+                        500],
+              backgroundColor:'#FF6130',
+              borderColor:'#FF6130'
+          }]
+      },
+      options: {}
+  });
+</script>
 </html>
