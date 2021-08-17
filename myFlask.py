@@ -34,6 +34,9 @@ def index():
     file_name = "hello, i am willy"
     return render_template('index.html',data=json.dumps(data))
 
+@app.route("/")
+def main():
+    return render_template('dashboard.html')
 # @app.route('/main')
 # def mainPage():
 #     return render_template('watch.html', user=user, movies = movies)
@@ -72,4 +75,4 @@ def index():
 
 if __name__ == "__main__":
 
-    app.run(host="127.0.0.1", port=5000)
+    app.run(host="127.0.0.1", port=5000, debug= True)
